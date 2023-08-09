@@ -1,5 +1,4 @@
 import { legacy_createStore } from "redux";
-import rootReducer from "./rootReducer";
 import { todoReducer } from "./todoReducer";
 //store
 //useReducer takes Reducer fun, initstate,
