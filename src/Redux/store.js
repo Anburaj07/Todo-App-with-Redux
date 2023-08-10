@@ -1,14 +1,9 @@
-import { legacy_createStore } from "redux";
-import { todoReducer } from "./todoReducer";
+import { legacy_createStore,combineReducers } from "redux";
 //store
-//useReducer takes Reducer fun, initstate,
+import countReducer from "./Counter/countReducer";
+import { todoReducer } from "./Todo/todoReducer";
+import authReducer from "./Counter/countReducer";
 
-const initstate={
-    count:0,
-    todos:[],
-    isLoading:false,
-    isError:false,
-    errorMessage:""
-}
+const rootReducer=combineReducers({countReducer,todoReducer,authReducer})
 
-export const store=legacy_createStore(todoReducer,initstate)
+export const store=legacy_createStore(rootReducer)
